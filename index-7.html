@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PKNAGAR RAJPUT</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      color: white;
+      background:
+        radial-gradient(circle at 50% 20%, #5d0909 0%, #160303 30%, #050505 70%);
+    }
+    header {
+      padding: 18px 20px;
+      text-align: center;
+      border-bottom: 1px solid #9d2525;
+      background: rgba(0,0,0,.65);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    .brand {
+      color: #ffd36a;
+      font-size: clamp(25px, 6vw, 42px);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-shadow: 0 0 18px #d51f1f;
+    }
+    .tag { color: #ddd; margin-top: 5px; letter-spacing: 4px; font-size: 12px; }
+    .hero {
+      min-height: 82vh;
+      display: grid;
+      place-items: center;
+      padding: 45px 18px;
+    }
+    .hero-inner {
+      width: min(1000px, 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+      order: 2;
+    }
+    .photo {
+      width: min(430px, 82vw);
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #d7a72f;
+      box-shadow: 0 0 0 8px rgba(215,167,47,.08), 0 0 45px rgba(213,31,31,.65);
+      background: #111;
+    }
+    .content { order: 1; }
+    .eyebrow {
+      color: #ff5b5b;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .95;
+      margin-bottom: 18px;
+    }
+    h1 span { color: #ffd36a; }
+    .desc {
+      color: #cfcfcf;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 25px;
+    }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    button, .upload-label {
+      border: 0;
+      padding: 13px 20px;
+      border-radius: 30px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .primary {
+      color: #120800;
+      background: linear-gradient(135deg, #ffe08a, #c68b16);
+      box-shadow: 0 0 22px rgba(255,204,70,.25);
+    }
+    .secondary {
+      color: white;
+      background: #171717;
+      border: 1px solid #7d2424;
+    }
+    .upload-area {
+      margin-top: 25px;
+      padding: 18px;
+      border: 1px dashed #b54a4a;
+      border-radius: 18px;
+      background: rgba(255,255,255,.03);
+    }
+    input { display: none; }
+    .upload-label { background: #8e1717; color: white; }
+    #status { color: #aaa; margin-left: 10px; font-size: 13px; }
+    .section {
+      width: min(1100px, 100%);
+      margin: auto;
+      padding: 55px 18px 80px;
+    }
+    .section h2 {
+      text-align: center;
+      color: #ffd36a;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      min-height: 210px;
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid #5e2020;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(145deg, #4c0909, #090909);
+    }
+    .card:nth-child(2) { background: linear-gradient(145deg, #241a05, #090909); }
+    .card:nth-child(3) { background: linear-gradient(145deg, #34065b, #090909); }
+    .card:nth-child(4) { background: linear-gradient(145deg, #05394a, #090909); }
+    .icon { font-size: 45px; margin-bottom: 18px; }
+    .card h3 { color: #ffd36a; margin-bottom: 5px; }
+    .card p { color: #aaa; font-size: 14px; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #888;
+      border-top: 1px solid #271111;
+      background: #050505;
+    }
+    @media (max-width: 760px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .photo-wrap { order: 1; }
+      .content { order: 2; text-align: center; }
+      .desc { margin-left: auto; margin-right: auto; }
+      .buttons { justify-content: center; }
+      .upload-area { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand">PKNAGAR</div>
+  <div class="tag">RAJPUT • PREMIUM GAMING</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="photo-wrap">
+        <img id="mainPhoto" class="photo" src="rajput-photo.png" alt="PKNAGAR Rajput">
+      </div>
+
+      <div class="content">
+        <div class="eyebrow">👑 WELCOME</div>
+        <h1>PKNAGAR<br><span>RAJPUT</span></h1>
+        <p class="desc">
+          Welcome to the official PKNAGAR Rajput gaming-style website.
+          Upload your own photo and instantly set it as the profile image.
+        </p>
+
+        <div class="buttons">
+          <a class="primary" href="#premium">Explore Premium</a>
+          <button class="secondary" onclick="document.getElementById('photoUpload').click()">
+            📸 Change Photo
+          </button>
+        </div>
+
+        <div class="upload-area">
+          <label class="upload-label" for="photoUpload">Upload New Photo</label>
+          <input id="photoUpload" type="file" accept="image/*">
+          <span id="status">Current photo is already added.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="premium">
+    <h2>🔥 PREMIUM GAMING ZONE</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Fire Battle</h3>
+        <p>Premium gaming-style thumbnail section.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👑</div>
+        <h3>Royal Rajput</h3>
+        <p>Gold and red royal theme for PKNAGAR.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Rank Push</h3>
+        <p>Fast, bold and energetic gaming look.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💎</div>
+        <h3>Elite Edition</h3>
+        <p>Premium card layout for your content.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 <strong>PKNAGAR RAJPUT</strong> • Premium Gaming Website
+</footer>
+
+<script>
+  const input = document.getElementById("photoUpload");
+  const photo = document.getElementById("mainPhoto");
+  const status = document.getElementById("status");
+
+  input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      status.textContent = "Please choose an image file.";
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      photo.src = e.target.result;
+      status.textContent = "Photo updated successfully!";
+    };
+    reader.readAsDataURL(file);
+  });
+</script>
+
+</body>
+</html>
